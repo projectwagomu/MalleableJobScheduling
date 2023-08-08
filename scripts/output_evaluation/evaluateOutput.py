@@ -15,6 +15,7 @@ import os
 import csv
 import re
 import multiprocessing as mp
+import pathlib
 
 
 regex_artifical = "^\d+D\[\d+\|\d+\|\d+\]#.*\{\d+,\d+\|.*,.*\}$"
@@ -259,7 +260,9 @@ def get_args():
 
 
 def generate_statistic(path):
-    name = path.removesuffix("/")
+#    name = path.removesuffix("/") #could be used for python >=3.9
+    p_file = pathlib.Path(path)
+    name = str(p_file)
     name = name[name.rfind("/") + 1:]
     statistic = generate_statistics(path)
     return {name: statistic}

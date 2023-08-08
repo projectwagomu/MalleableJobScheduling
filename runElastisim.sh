@@ -47,7 +47,7 @@ dockerfileOnlyElastisimEnv="--env=\"STARTUP_COMMAND=/simulation/elastisim/elasti
 
 runElastisim="run $dockerfileLinkFolders $dockerfileOnlyElastisimEnv --name=elastisim -it --rm $DOCKERIMAGE_ELASTISIM"
 runScheduler="exec -it elastisim python3 -B /algorithm/algorithm.py"
-runSimulation="run $dockerfileLinkFolders --name=NAME_PLACEHOLDER --rm $DOCKERIMAGE_ELASTISIM"
+runSimulation="run $dockerfileLinkFolders --user $(id -u $USER):$(id -g $USER) --name=NAME_PLACEHOLDER --rm $DOCKERIMAGE_ELASTISIM"
 
 #read args
 if [[ -z $* ]] || [[ $* == "-u" ]]; then
