@@ -28,7 +28,7 @@ ELASTISIM_TAR_CONTAINER="${DATA_FOLDER}/elastisim.tar"
 #generate input file both args
 days_to_simulate=3
 seeds=("S1" "S2" "S3")
-type_probabilities=("100,0,0" "90,0,10" "80,0,20" "70,0,30" "60,0,40" "50,0,50" "40,0,60" "30,0,70" "20,0,80" "10,0,90" "0,0,100") #(Rigid, Moldable, Malleable)
+type_probabilities=("100,0,0" "80,0,20" "60,0,40" "40,0,60" "20,0,80" "0,0,100") #(Rigid, Moldable, Malleable)
 malleable_dividation_amount=1000
 dividation_split_time=60 #seconds
 application_model="data/input/application_model.json"
